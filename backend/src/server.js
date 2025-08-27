@@ -17,7 +17,9 @@ app.use(cors({
         "http://localhost:5173",
         "https://thinkboard-omega-two.vercel.app",
         "https://thinkboard-l12ql5ahon-monis-sarwars-projects.vercel.app"
-    ]
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 // ...existing code...
