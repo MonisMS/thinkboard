@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 
 
-// ...existing code...
+
 
 app.use(cors({
     origin: [
@@ -19,10 +19,11 @@ app.use(cors({
         "https://thinkboard-l12ql5ahon-monis-sarwars-projects.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    
 }));
 
-// ...existing code...
+app.options("*", cors());
+
 app.use(express.json())
 app.use(rateLimiter)
 app.use("/api/notes",notesRouter);
