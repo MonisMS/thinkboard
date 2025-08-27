@@ -11,8 +11,13 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use(cors(
-    {origin:["http://localhost:5173",
-       "https://thinkboard-omega-two.vercel.app/"
+    {origin:[app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://thinkboard-omega-two.vercel.app",
+        "https://thinkboard-l12ql5ahon-monis-sarwars-projects.vercel.app" // <-- Add this
+    ]
+}))
     ]}
 ))
 app.use(express.json())
